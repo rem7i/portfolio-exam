@@ -1,0 +1,7 @@
+my-portfolio-exam/
+├── index.html
+├── skills.html
+├── css/
+│   └── style.css
+└── js/
+    └── script.js

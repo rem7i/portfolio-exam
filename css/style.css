@@ -1,0 +1,259 @@
+/* e) External CSS */
+
+/* CSS Variables for consistent theming */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+    --white-color: #ffffff;
+    --text-color: #212529;
+    --border-color: #dee2e6;
+    --navbar-height: 56px;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+    --transition-speed: 0.3s;
+}
+
+/* Base styles */
+body {
+    padding-top: var(--navbar-height); /* Height of the fixed navbar */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+}
+
+html {
+    scroll-behavior: smooth; /* Moved from bottom for better organization */
+}
+
+/* Layout components */
+.full-height-section {
+    min-height: calc(100vh - var(--navbar-height)); /* Adjusted for navbar height */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* For parallax effect */
+}
+
+.page-content {
+    padding-top: 2rem; /* Add some space below fixed navbar for non-full-height pages */
+}
+
+/* Typography */
+#home h1 {
+    font-weight: 300;
+}
+
+/* Navigation */
+.navbar-brand svg {
+    vertical-align: -0.125em; /* Fine-tune SVG alignment */
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: var(--white-color); /* Removed !important */
+}
+
+/* Section styling */
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Iframe container for responsive embeds */
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* ===== CONTACT SECTION ===== */
+.card-container {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.contact-form, .contact-info {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.contact-info h4 {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+}
+
+.contact-info i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    width: 20px;
+}
+
+.map-container {
+    margin-top: 20px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.map-iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+}
+
+/* Card animations */
+.card {
+    transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15); /* Removed !important */
+}
+
+/* Skill item styling */
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-item .btn-danger {
+    font-size: 0.8em;
+    padding: 0.2em 0.5em;
+}
+/* ===== SKILLS SECTION ===== */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills-item {
+    margin-bottom: 30px;
+}
+
+.skills-card {
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed) ease;
+}
+
+.skills-card:hover {
+    transform: translateY(-10px);
+}
+
+.skills-card i {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.skills-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.progress {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+}
+
+/* Progress bar percentages */
+.progress-95 {
+    width: 95%;
+}
+
+.progress-90 {
+    width: 90%;
+}
+
+.progress-85 {
+    width: 85%;
+}
+
+.progress-80 {
+    width: 80%;
+}
+
+.progress-75 {
+    width: 75%;
+}
+
+/* Toast notification for skill actions */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050;
+}
+
+.toast {
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 15px;
+    margin-bottom: 10px;
+    max-width: 350px;
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease-in-out;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+.toast-success {
+    border-left: 4px solid #28a745;
+}
+
+.toast-error {
+    border-left: 4px solid #dc3545;
+}
