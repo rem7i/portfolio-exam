@@ -27,8 +27,8 @@ This project was created as part of a final exam to demonstrate web development 
 - **Font Awesome**: Icons
 
 ## Project Structure
-///
-my-portfolio-exam/
+```
+portfolio-exam/
 ├── index.html
 ├── README.md
 ├── skills.html
@@ -36,7 +36,8 @@ my-portfolio-exam/
 │   └── style.css
 └── js/
     └── script.js
-///
+```
+
 ## Requirements Fulfilled
 
 ### Skill Tracker (Local Storage)
